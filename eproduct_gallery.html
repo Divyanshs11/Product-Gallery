@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechStore - Premium Electronics</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="eproduct_gallery.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <nav class="nav">
+      <div class="logo">
+        <i class="fas fa-bolt"></i> TechStore
+      </div>
+      <div class="nav-actions">
+        <div class="search-bar">
+          <input type="text" id="searchInput" placeholder="Search products...">
+          <i class="fas fa-search"></i>
+        </div>
+        <button class="cart-btn" id="cartBtn">
+          <i class="fas fa-shopping-cart"></i>
+          Cart
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container">
+    <!-- Filters -->
+    <section class="filters">
+      <h3>Filter Products</h3>
+      <div class="filter-group">
+        <button class="filter-btn active" data-category="all">All Products</button>
+        <button class="filter-btn" data-category="smartphones">Smartphones</button>
+        <button class="filter-btn" data-category="laptops">Laptops</button>
+        <button class="filter-btn" data-category="accessories">Accessories</button>
+        <button class="filter-btn" data-category="headphones">Headphones</button>
+        <select class="sort-select" id="sortSelect">
+          <option value="name">Sort by Name</option>
+          <option value="price-low">Price: Low to High</option>
+          <option value="price-high">Price: High to Low</option>
+          <option value="rating">Highest Rated</option>
+        </select>
+      </div>
+    </section>
+
+    <!-- Products Header -->
+    <div class="products-header">
+      <div class="products-count" id="productsCount">Showing 0 products</div>
+    </div>
+
+    <!-- Products Grid -->
+    <section class="products-grid" id="productsGrid">
+      <div class="loading">
+        <div class="spinner"></div>
+        <p>Loading products...</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Product Modal -->
+  <div class="modal" id="productModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Product Details</h2>
+        <button class="close-btn" id="closeModal">&times;</button>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- Cart Sidebar -->
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3>Shopping Cart</h3>
+      <button class="close-btn" id="closeCart">&times;</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total: </span>
+        <span id="cartTotal">$0.00</span>
+      </div>
+      <button class="checkout-btn" id="checkoutBtn">Proceed to Checkout</button>
+    </div>
+  </div>
+
+  <script src="eproduct_gallery.js"></script>
+</body>
+</html>
